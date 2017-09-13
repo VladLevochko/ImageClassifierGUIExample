@@ -8,13 +8,9 @@ import random
 
 class App(QWidget):
 
-    def __init__(self):
+    def __init__(self, title):
         super().__init__()
-        self.title = 'First QT application'
-        self.left = 10
-        self.top = 10
-        self.width = 320
-        self.height = 600
+        self.title = title
 
         self.image_label = None
         self.text_label = None
@@ -60,5 +56,5 @@ class App(QWidget):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    ex = App()
+    ex = App('CIFAR10 image classifier')
     sys.exit(app.exec_())
