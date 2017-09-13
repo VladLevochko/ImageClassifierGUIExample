@@ -32,8 +32,8 @@ class App(QWidget):
         layout.addWidget(self.image_label)
         layout.addWidget(self.text_label)
 
-        image, text = self.generate_random_values()
-        self.set_labels(image, text)
+        image, text = self._generate_random_values()
+        self._set_labels(image, text)
 
         self.setLayout(layout)
         self.show()
@@ -42,14 +42,14 @@ class App(QWidget):
         if e.key() == Qt.Key_Escape:
             self.close()
         if e.key() == Qt.Key_Space:
-            image, text = self.generate_random_values()
-            self.set_labels(image, text)
+            image, text = self._generate_random_values()
+            self._set_labels(image, text)
 
-    def set_labels(self, image, text):
+    def _set_labels(self, image, text):
         self.image_label.setPixmap(image)
         self.text_label.setText(text)
 
-    def generate_random_values(self):
+    def _generate_random_values(self):
         image = QPixmap("320x320.jpg")
         text = ''
         for i in range(5):
